@@ -1,0 +1,50 @@
+1. *Slug field copies the value set for the Model field*
+Description: On add new device type page, the slug field copies the value entered
+for the model field just by clicking anywhere on the page including slug field.
+
+Steps to reproduce:
+1. Go to add new device type page
+2. Populate Model input field
+3. Click outside of the Model field
+
+Expected result: Slug field remains unpopulated
+Actual result: Slug field populates with same value as Model field
+
+
+2. *Height (U) step 0.1 value does not trigger appropriate message*
+Description: If the value for step smaller than 0.1 (example 0.01) is set as
+height value, the error "This field is required." is displayed instead of 
+appropriate step error.
+
+Steps to reproduce:
+1. Go to add new device type page
+2. Populate Manufacturer, Model and Slug fields
+3. Input 0.01 for Height (U) field
+
+Expected result: Error message "Decimal step should not be smaller than 0.1"
+is displayed.
+Actual result: Error message "This field is required." is displayed.
+
+
+3. *Height (U) reporting error on valid input value
+Description: If the value for the height is 4 digit integer number, error
+is displayed and device type cannot be created
+
+Steps to reproduce:
+1. 1. Go to add new device type page
+2. Populate Manufacturer, Model and Slug fields
+3. Input 1111 for Height (U) field
+
+Expected result: Device type is created with the Height value 1111
+Actual result: Error message "Ensure that there are no more than 3 digits before the decimal point." is displayed.
+
+
+4. *Device cannot be deleted*
+Description: Newly created device cannot be deleted, error message in alert "Deletion is prevented by a protection rule: ["Custom validation failed for status: [\'Ensure this value is equal to decommissioning.\]"
+
+Steps to reproduce:
+1. Create new device
+2. Click on delete button and confirm delete
+
+Expected result: Device is deleted
+Actual result: Error message "Deletion is prevented by a protection rule: ["Custom validation failed for status: [\'Ensure this value is equal to decommissioning.\]" is displayed in alert
