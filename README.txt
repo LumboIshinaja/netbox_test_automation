@@ -12,8 +12,8 @@ pip install -r requirements.txt
 playwright install
 
 4. Set USERNAME and PASSWORD as environment variables (you can put any other value just make sure to have defined variables)
-EXPORT USERNAME = ""milostest""
-EXPORT PASSWORD = "password"
+export USERNAME="milostest"
+export PASSWORD="password"
 
 Running tests:
 
